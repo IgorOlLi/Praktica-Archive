@@ -1,0 +1,231 @@
+body
+{
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* ВЕРХНЯЯ ШТУКА */
+.header
+{
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  background-color: #FFF2CF;
+  height: 80px;
+  z-index: 10;
+  font-size: 20px; 
+}
+.header-line
+{
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav-item /* Кнопки сверху справа */
+{
+  color: black;
+  text-decoration: none;
+  font-weight: 600; /* 300-800 */
+  margin-right: 25px; ;
+}
+.nav-item:hover /* Изменение цвета при наведении на кнопки сверху справа */
+{
+  color: #9396B0;
+}
+
+/* ПЕРВЫЙ БЛОК */
+
+.about-block
+{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  height: 90vh;
+  background: url("../img/Zdanie.jpg");
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+.about-block:after
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.first-word
+{
+  padding-right: 4em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 80px;
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  font-size: 40px;
+}
+
+/* АНИМАЦИЯ */
+
+@-webkit-keyframes animateWord {
+  0% { opacity: 0; }
+  2% { opacity: 0; -webkit-transform: translateY(-30px); }
+  5% { opacity: 1; -webkit-transform: translateY(0px);}
+  17% { opacity: 1; -webkit-transform: translateY(0px); }
+  20% { opacity: 0; -webkit-transform: translateY(30px); }
+  80% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.animated-words span { /* Если убрать спан то надо и убрать последний .animated-words span:nth-child и время уменьшить на 3 секунды*/
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-animation: animateWord 12s linear infinite 0s;
+  -ms-animation: animateWord 12s linear infinite 0s;
+  animation: animateWord 12s linear infinite 0s;
+}
+
+.animated-words span:nth-child(2) { 
+  -webkit-animation-delay: 3s; 
+  -ms-animation-delay: 3s; 
+  animation-delay: 3s; 
+}
+.animated-words span:nth-child(3) {
+  -webkit-animation-delay: 6s; 
+  -ms-animation-delay: 6s; 
+  animation-delay: 6s; 
+}
+.animated-words span:nth-child(4) { 
+  -webkit-animation-delay: 9s; 
+  -ms-animation-delay: 9s; 
+  animation-delay: 9s; 
+}/*
+.animated-words span:nth-child(5) { 
+  -webkit-animation-delay: 12s; 
+  -ms-animation-delay: 12s; 
+  animation-delay: 12s; 
+}
+.animated-words span:nth-child(6) { 
+  -webkit-animation-delay: 15s; 
+  -ms-animation-delay: 15s; 
+  animation-delay: 15s; 
+}
+*/
+.animated-words {
+  display: inline-block;
+  color: aqua;
+  /*font-size: 40px;*/
+}
+.text-wrapper {
+  text-align: center;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 30px;
+  /*font-size: 40px;*/
+}
+/* ЧТО-ТО */
+
+.text-red
+{
+    font-size: 32px;
+}
+#protocol
+{
+  height: 150px; width: 150px; 
+}
+.login
+{
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+  position: relative;
+  /*top: 100px; right: 150px;*/
+  height: 450px; width: 450px;
+  text-align: center;
+  z-index: 3;
+}
+.form-word
+{
+  font-size: 20px;
+}
+section{
+  flex-wrap: wrap;
+  flex: 200px;
+
+}
+
+
+/* ВТОРОЙ БЛОК */
+
+.something-block
+{
+  background-color: #D9D9D9;
+  height: 100vh;
+}
+
+.photo-container-1 {
+  margin: auto;
+	max-width: 380px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
+}
+.photo-container-1 img {
+	width: 100%;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
+}
+.photo-container-1 .photo-0 {
+	position: relative;
+	z-index: -2;
+}
+.photo-container-1 .photo-1 {
+	position: absolute;
+	top:-100%;
+	animation: fromtop 10s linear 5s infinite;
+}
+.photo-container-1 .photo-2 {
+	position: absolute;
+	top:-100%;
+	animation: fromtop 10s linear infinite;
+}
+@keyframes fromtop {
+	0% {
+		top: -100%;
+	}
+	4% {
+		top: 0;
+	}
+	5% {
+		top: -20px;
+	}
+	6% {
+		top: 0;
+	} 
+	49.99999% {
+		top: 0;
+		z-index: 1;
+	}   
+	50% {
+		top: 0;
+		z-index: -1;
+	}  
+	100% {
+		top: 0;
+		z-index: -1;  	
+	}  
+}
+
+.about-protocol
+{
+  margin: auto;
+}
